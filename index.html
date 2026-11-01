@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard - Jakarta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="brand">
+            <span class="logo">☀</span>
+            <span>Weather Dashboard</span>
+        </div>
+        <span class="api-label">OPEN-METEO API</span>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">WEATHER INFORMATION</p>
+                <h1>Cuaca Jakarta</h1>
+                <p class="subtitle">
+                    Informasi temperatur per jam berdasarkan data Open-Meteo.
+                </p>
+            </div>
+            <div class="location">
+                <span>📍</span>
+                <span>Jakarta, Indonesia</span>
+            </div>
+        </section>
+
+        <section class="summary">
+            <div class="card">
+                <span class="card-icon">🌡️</span>
+                <p>Total Data</p>
+                <h2 id="totalData">-</h2>
+                <small>Data pengukuran</small>
+            </div>
+
+            <div class="card">
+                <span class="card-icon">🔥</span>
+                <p>Suhu Tertinggi</p>
+                <h2 id="maxTemp">-</h2>
+                <small>Dari 10 data pertama</small>
+            </div>
+
+            <div class="card">
+                <span class="card-icon">❄️</span>
+                <p>Suhu Terendah</p>
+                <h2 id="minTemp">-</h2>
+                <small>Dari 10 data pertama</small>
+            </div>
+        </section>
+
+        <section class="data-section">
+            <div class="section-header">
+                <div>
+                    <h2>Temperatur Per Jam</h2>
+                    <p>Daftar waktu pengukuran dan suhu udara</p>
+                </div>
+
+                <button id="refreshBtn">↻ Refresh Data</button>
+            </div>
+
+            <div id="status" class="status">
+                Mengambil data cuaca...
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Waktu Pengukuran</th>
+                            <th>Temperatur</th>
+                        </tr>
+                    </thead>
+                    <tbody id="weatherData">
+                        <tr>
+                            <td colspan="3">Memuat data...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            <p>Data bersumber dari Open-Meteo API</p>
+            <p>Weather Dashboard | Praktikum Pemrograman</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
